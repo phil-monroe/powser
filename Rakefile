@@ -1,7 +1,7 @@
 require "bundler"
 Bundler.setup
 
-gemspec = eval(File.read("gem.gemspec"))
+gemspec = eval(File.read(Dir["*.gemspec"].first))
 
 
 desc "Validate the gemspec"
