@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   # s.add_dependency "another", "~> 1.2"
 
   # If you need to check in files that aren't .rb files, add them here
-  s.files        = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.rdoc"]
+  s.files        = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
   s.require_path = 'lib'
 
   # For executables
