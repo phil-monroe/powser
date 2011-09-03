@@ -1,10 +1,8 @@
-# coding: UTF-8
-
 Gem::Specification.new do |s|
   s.name              = "gem"
   s.version           = "0.0.1"
   s.platform          = Gem::Platform::RUBY
-  s.authors           = ["Gonçalo Silva"]
+  s.authors           = ["Goncalo Silva"]
   s.email             = ["goncalossilva@gmail.com"]
   s.homepage          = "http://github.com/goncalossilva/gem_template"
   s.summary           = "Sample gem"
