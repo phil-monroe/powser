@@ -4,9 +4,9 @@ require 'rubygems'
 require 'thor'
 require 'fileutils'
 require 'net/https'
-require 'powder/version'
+require 'powser/version'
 
-module Powder
+module Powser
   class CLI < Thor
     include Thor::Actions
     default_task :help
@@ -46,7 +46,7 @@ module Powder
 
     desc "version", "Shows the version."
     def version
-       say "powser #{Powder::VERSION}"
+       say "powser #{Powser::VERSION}"
     end
 
     private
@@ -97,6 +97,16 @@ module Powder
         return false
       end
     end
+    
+    def is_rails2_app?
+      File.exists?('config/environment.rb') &&
+        !`grep RAILS_GEM_VERSION config/environment.rb`.empty? ? 'Rails 2' : nil
+    end
+
+    def is_radiant_app?
+      File.exists?('config/environment.rb') &&
+        !`grep Radiant::Initializer config/environment.rb`.empty? ? 'Radiant' : nil
+    end
   end
 end
-Powder::CLI.start
+Powser::CLI.start
