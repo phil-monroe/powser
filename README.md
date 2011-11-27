@@ -4,35 +4,35 @@ A simple web server interface to powder CLI for pow! This gives you the ability 
 ### Features
 * Application Restart
  	* Restarts a linked application and redirects to it's root url
-		* Browse to `http://prowser.dev/restart`
+		* Browse to `http://powser.dev/restart`
 	* Redirect to a custom url by passing in the `redirect` parameter to the action
-		* `http://prowser.dev/restart?redirect=www.appname.dev`
+		* `http://powser.dev/restart?redirect=www.appname.dev`
 
-### How do I setup Prowser?
+### How do I setup Powser?
 From scratch:
 
 ```sh
 cd path/to/pow/app
-gem install prowser
-prowser start
+gem install powser
+powser start
 ```
 
-Link prowser to an app with a custom appname:
+Link powser to an app with a custom appname:
 
 ```sh
-prowser start appname
+powser start appname
 ```
 
-Stop the prowser server
+Stop the powser server
 
 ```sh
-prowser stop
+powser stop
 ```
 
-Restart the prowser server
+Restart the powser server
 
 ```sh
-prowser restart
+powser restart
 ```
 
 ### Troubleshooting
