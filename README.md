@@ -7,6 +7,8 @@ A simple web server interface to powder CLI for pow! This gives you the ability 
 		* Browse to `http://powser.dev/restart`
 	* Redirect to a custom url by passing in the `redirect` parameter to the action
 		* `http://powser.dev/restart?redirect=www.appname.dev`
+	* Restart any of your pow apps by passing the `app` parameter the action
+		* `http://powser.dev/restart?app=appname`
 
 ### How do I setup Powser?
 From scratch:
