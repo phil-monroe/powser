@@ -23,7 +23,7 @@ module Powser
         File.open("app", "w") do |f|
           f.puts(app)
         end
-        say "Powser is now active for #{app}."
+        say "Powser defaults to #{app}."
       end
     end
 
@@ -32,7 +32,7 @@ module Powser
       app ||= get_pow_name
       Dir.chdir(SERVER_PATH) do
         `powder unlink`
-        say "Powser is no longer active for #{app}."
+        say "Powser no longer defaults to #{app}."
       end
     end
 
