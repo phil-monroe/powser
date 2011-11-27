@@ -1,10 +1,10 @@
-## Powser
+### Powser
 A simple web server interface to powder CLI for pow!
 
-## Features
+### Features
 * Restart an application by browsing to `http://prowser.dev/restart`
 
-## How do I use Prowser?
+### How do I use Prowser?
 From scratch:
 
 ```sh
