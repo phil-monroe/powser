@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version           = Powser::VERSION
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Phil Monroe"]
-  s.email             = ["phil@philmonroe.com.com"]
+  s.email             = ["phil@philmonroe.com"]
   s.homepage          = "http://github.com/phil-monroe/powser"
   s.summary           = "Powder from your browser."
   s.description       = "A simple web server interface to Powder."
