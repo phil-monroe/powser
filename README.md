@@ -1,5 +1,5 @@
 ### Powder for your browser!
-A simple web server interface to powder CLI for pow! This gives you the ability to create a bookmark button in your browser that will restart your development app and redirect to the root url.
+A simple web server interface to [powder](https://rubygems.org/gems/powder) CLI for [pow](http://pow.cx/)! This gives you the ability to create a bookmark button in your browser that will restart your development app and redirect to the root url.
 
 ### Features
 * Application Restart
