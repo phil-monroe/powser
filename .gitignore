@@ -1,1 +1,9 @@
-pkg
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+tmp
+.rvmrc
+log/*
+lib/powser/app
+lib/powser/tmp
