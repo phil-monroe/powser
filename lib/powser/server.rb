@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'logger'
 
 module Powser  
   class Server < Sinatra::Base

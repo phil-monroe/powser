@@ -8,7 +8,7 @@ A simple web server interface to powder CLI for pow! This gives you the ability 
 	* Redirect to a custom url by passing in the `redirect` parameter to the action
 		* `http://prowser.dev/restart?redirect=www.appname.dev`
 
-### How do I use Prowser?
+### How do I setup Prowser?
 From scratch:
 
 ```sh
