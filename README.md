@@ -20,11 +20,13 @@ prowser start appname
 ```
 
 Stop the prowser server
+
 ```sh
 prowser stop
 ```
 
 Restart the prowser server
+
 ```sh
 prowser restart
 ```
