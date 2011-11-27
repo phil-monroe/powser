@@ -18,15 +18,10 @@ Gem::Specification.new do |s|
   # If you have runtime dependencies, add them here
   s.add_dependency 'thor', '>=0.11.5'
   s.add_dependency "sinatra", '>=1.3.1'
-  
+  s.add_dependency "powder", '>=0.1.7'
 
   # The list of files to be contained in the gem
   s.files         = `git ls-files`.split("\n")
   s.executables   = ["powser"]
   s.require_paths = ["lib"]
-  
-  s.require_path = 'lib'
-
-  # For C extensions
-  # s.extensions = "ext/extconf.rb"
 end
