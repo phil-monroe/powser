@@ -10,6 +10,8 @@ module Powser
     
     # Routes ------------------------------------------------------------------
     get '/restart' do
+      @pow_app = params[:app] if params[:app]
+      
       to_url = redirect_url(params[:redirect])
       pow_dir(@pow_app) do
         `powder restart`
@@ -17,6 +19,8 @@ module Powser
       end
       redirect to_url
     end
+    
+    private
     
     # Helpers -------------------------------------------------------------------
     def pow_dir(app_name, &block)
