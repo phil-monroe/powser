@@ -1,8 +1,12 @@
 ### Powser
-A simple web server interface to powder CLI for pow!
+A simple web server interface to powder CLI for pow! This gives you the ability to create a bookmark button in your browser that will restart your development app and redirect to the root url.
 
 ### Features
-* Restart an application by browsing to `http://prowser.dev/restart`
+* Application Restart
+ 	* Restarts a linked application and redirects to it's root url
+		* Browse to `http://prowser.dev/restart`
+	* Redirect to a custom url by passing in the `redirect` parameter to the action
+		* `http://prowser.dev/restart?redirect=www.appname.dev`
 
 ### How do I use Prowser?
 From scratch:
