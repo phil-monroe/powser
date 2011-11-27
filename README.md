@@ -1,4 +1,4 @@
-### Powser
+### Powder for your browser!
 A simple web server interface to powder CLI for pow! This gives you the ability to create a bookmark button in your browser that will restart your development app and redirect to the root url.
 
 ### Features
@@ -34,3 +34,6 @@ Restart the prowser server
 ```sh
 prowser restart
 ```
+
+### Troubleshooting
+Sometimes you will get an error related to changing directory. If that happen just restart the powser server with `powser restart` and life will be good.
