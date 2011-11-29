@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>Powser</title>
+	
+	<style>
+		*{
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			margin: 100px 0 50px 0;
+		}
+		h1{
+			font-size: 40pt;
+		}
+		h2{
+			font-size: 13.3pt;
+			color: darkgrey;
+			font-style: italic;
+		}
+		#wrap{
+			width: 600px;
+			margin:	auto;
+		}
+		#apps-table{
+			border-collapse:collapse;
+		}
+		td, th{
+			padding: .5em 1em .5em 1em;
+			text-align: center;
+			
+			
+		}
+
+		#apps-table .default{
+			width: 100px;			
+		}
+		#apps-table .app-name{
+			width: 250px;			
+		}
+		#apps-table .actions{
+			width: 250px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h1>Powser</h1>
+			<h2>Powder for your browser!</h2>
+		</header>
+		<table id="apps-table" cellspacing=0>
+			<tr>
+				<th class="default"	>Default</th>
+				<th class="app-name">App</th>
+				<th class="actions"	>Actions</th>
+			</tr>
+			<% for app in @apps %>
+				<tr>
+					<td class="default"><%= @default_app == app[1] ? '*' : '' %></td>
+					<td class="app-name"><%= app[1]%></td>
+					<td class="actions"><%= restart_link(app[1]) %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</body>
+</html>

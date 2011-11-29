@@ -5,6 +5,7 @@ require 'thor'
 require 'fileutils'
 require 'net/https'
 require 'powser/version'
+require 'powder'
 
 module Powser
   class CLI < Thor
@@ -12,7 +13,6 @@ module Powser
     default_task :help
     
     SERVER_PATH = File.dirname(__FILE__) + "/../lib/powser"
-    POWDER_CONFIG = ".powder"
 
     desc "start", "Start a webserver to provide powder functionality from your browser. The server is located at http://powser.dev. Pass the name of the pow link that you want powser to monitor."
     def start(app = nil)
@@ -50,63 +50,8 @@ module Powser
     end
 
     private
-  
-    def current_dir_name
-      File.basename(%x{pwd}.chomp)
-    end
-  
-    def configured_pow_name
-      return nil unless File.exists?(POWDER_CONFIG)
-  
-      File.foreach(POWDER_CONFIG) do |line|
-        next if line =~ /^($|#)/
-        return line.chomp
-      end
-  
-      return nil
-    end
-  
-    def current_dir_pow_name
-      current_dir_name.tr('_', '-')
-    end
-  
-    def get_pow_name
-      configured_pow_name || current_dir_pow_name
-    end
-
-    def is_powable?
-      if File.exists?('config.ru') || File.exists?('public/index.html')
-        true
-      elsif legacy = (is_rails2_app? || is_radiant_app?)
-        say "This appears to be a #{legacy} application. You need a config.ru file."
-        if yes? "Do you want to autogenerate a basic config.ru for #{legacy}?"
-          uri = URI.parse("https://raw.github.com/gist/909308")
-          http = Net::HTTP.new(uri.host, uri.port)
-          http.use_ssl = true
-          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-          request = Net::HTTP::Get.new(uri.request_uri)
-          create_file "config.ru",  http.request(request).body
-          return true
-        else
-          say "Did not create config.ru"
-          return false
-        end
-      else
-        say "This does not appear to be a rack app as there is no config.ru."
-        say "Pow can also host static apps if there is an index.html in public/"
-        return false
-      end
-    end
+    include Powder::Helpers
     
-    def is_rails2_app?
-      File.exists?('config/environment.rb') &&
-        !`grep RAILS_GEM_VERSION config/environment.rb`.empty? ? 'Rails 2' : nil
-    end
-
-    def is_radiant_app?
-      File.exists?('config/environment.rb') &&
-        !`grep Radiant::Initializer config/environment.rb`.empty? ? 'Radiant' : nil
-    end
   end
 end
 Powser::CLI.start
